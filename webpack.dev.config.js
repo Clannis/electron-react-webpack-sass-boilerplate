@@ -9,6 +9,11 @@ const defaultInclude = path.resolve(__dirname, 'src')
 module.exports = {
   module: {
     rules: [
+      { 
+        test: /\.scss$/, 
+        use: [{ loader: 'style-loader'}, {loader: 'css-loader'}, {loader: 'sass-loader'}],
+        include: defaultInclude
+      },
       {
         test: /\.css$/,
         use: [{ loader: 'style-loader' }, { loader: 'css-loader' }, { loader: 'postcss-loader' }],
